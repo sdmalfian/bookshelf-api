@@ -1,7 +1,11 @@
 /* eslint-disable import/extensions */
-const { addBookHandler } = require('./handler/addBookHandler');
-const { getAllBooksHandler, getBookByIdHandler } = require('./handler/getBookHandler');
-const { editBookByIdHandler } = require('./handler/editBookHandler');
+const {
+  addBookHandler,
+  getAllBooksHandler,
+  getBookByIdHandler,
+  editBookByIdHandler,
+  deleteBookByIdHandler,
+} = require('./handler/handler.js');
 
 const routes = [
   {
@@ -24,11 +28,11 @@ const routes = [
     path: '/books/{id}',
     handler: editBookByIdHandler,
   },
-  // {
-  //   method: 'DELETE',
-  //   path: '/notes/{id}',
-  //   handler: deleteNoteByIdHandler,
-  // },
+  {
+    method: 'DELETE',
+    path: '/books/{id}',
+    handler: deleteBookByIdHandler,
+  },
 ];
 
 module.exports = routes;
